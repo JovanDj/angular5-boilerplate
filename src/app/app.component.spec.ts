@@ -1,14 +1,25 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+
+import { MatCardModule } from '@angular/material';
+import { MatMenuModule } from '@angular/material';
+import { MatProgressSpinnerModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material';
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        MatCardModule,
+        MatMenuModule,
+        MatProgressSpinnerModule,
+        MatButtonModule
       ],
       declarations: [
         AppComponent
+
       ],
     }).compileComponents();
   }));
@@ -26,6 +37,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to app!');
+    expect(compiled.querySelector('h1').textContent).toContain('app');
   }));
 });
